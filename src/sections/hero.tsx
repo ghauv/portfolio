@@ -3,9 +3,11 @@
 import { expertiseConfig } from "@/mocks/hero.mock";
 import { Focus } from "@/types/types";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 // import { ArrowRight } from "phosphor-icons";
 
-export function Hero() {
+// Composant interne qui utilise useSearchParams
+function HeroContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const focus = (searchParams.get("focus") as Focus) || "ux";
@@ -34,7 +36,6 @@ export function Hero() {
       id="hero"
       className="md:h-[60vh] section-padding bg-gray-100 flex items-end justify-left"
     >
-      {/* Hero Section */}
       <div className="container mx-auto max-w-7xl py-1">
         {/* Badge */}
         <div className="mb-5">
@@ -62,21 +63,30 @@ export function Hero() {
               className="group px-4 py-2 rounded-md text-sm font-medium transition-al bg-neutral-200 text-muted-foreground hover:bg-neutral-300"
             >
               {getExpertiseLabel(exp)}
-              {/* <ArrowRight size={32} /> */}
-              {/* <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" /> */}
             </button>
           ))}
         </div>
       </div>
-
-      {/* <div className="container mx-auto max-w-4xl text-center">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground mb-6 text-balance">
-          {hero.title}
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-          {hero.description}
-        </p>
-      </div> */}
     </section>
+  );
+}
+
+export function Hero() {
+  return (
+    <Suspense
+      fallback={
+        <section className="md:h-[60vh] section-padding bg-gray-100 flex items-end justify-left">
+          <div className="container mx-auto max-w-7xl py-1">
+            <div className="mb-5">
+              <span className="text-md text-muted-foreground px-2 py-1 bg-neutral-300">
+                Chargement...
+              </span>
+            </div>
+          </div>
+        </section>
+      }
+    >
+      <HeroContent />
+    </Suspense>
   );
 }

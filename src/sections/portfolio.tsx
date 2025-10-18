@@ -5,9 +5,9 @@ import SubCategoryButtons from "@/components/subcategory-button";
 import { Project, uxProjects, devProjects } from "@/mocks/portfolio.mock";
 import { Focus, SubCategory } from "@/types/types";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-export function Portfolio() {
+function PortfolioContent() {
   const searchParams = useSearchParams();
   const focus = (searchParams.get("focus") || "ux") as Focus;
 
@@ -28,6 +28,7 @@ export function Portfolio() {
         return uxProjects;
     }
   })();
+
   const displayedProjects =
     subCategory === "all"
       ? mainProjects
@@ -40,9 +41,6 @@ export function Portfolio() {
           <h2 className="text-xl md:text-3xl font-light tracking-tight text-foreground mb-1">
             Portfolio
           </h2>
-          {/* <p className="text-md text-neutral-500 max-w-2xl">
-            Une sélection de projets UX et de redesigns non sollicités
-          </p> */}
         </div>
 
         <SubCategoryButtons
@@ -58,5 +56,28 @@ export function Portfolio() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function Portfolio() {
+  return (
+    <Suspense
+      fallback={
+        <section id="portfolio" className="min-h-screen section-padding">
+          <div className="container mx-auto max-w-7xl">
+            <div className="mb-8">
+              <h2 className="text-xl md:text-3xl font-light tracking-tight text-foreground mb-1">
+                Portfolio
+              </h2>
+            </div>
+            <div className="flex justify-center items-center h-64">
+              <p className="text-muted-foreground">Chargement des projets...</p>
+            </div>
+          </div>
+        </section>
+      }
+    >
+      <PortfolioContent />
+    </Suspense>
   );
 }
