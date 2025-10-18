@@ -2,7 +2,12 @@
 
 import { ProjectCard } from "@/components/project-card";
 import SubCategoryButtons from "@/components/subcategory-button";
-import { Project, uxProjects, devProjects } from "@/mocks/portfolio.mock";
+import {
+  Project,
+  uxProjects,
+  devProjects,
+  artProjects,
+} from "@/mocks/portfolio.mock";
 import { Focus, SubCategory } from "@/types/types";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
@@ -24,6 +29,8 @@ function PortfolioContent() {
         return uxProjects;
       case "dev":
         return devProjects;
+      case "art":
+        return artProjects;
       default:
         return uxProjects;
     }
@@ -49,10 +56,12 @@ function PortfolioContent() {
           onSubCategoryChange={setSubCategory}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 lg:gap-16 ">
-          {displayedProjects.map((project: Project, index: number) => (
-            <ProjectCard key={index} {...project} />
-          ))}
+        <div className={`${focus === "art" ? "pt-12 pb-12" : "pb-12"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 lg:gap-16 ">
+            {displayedProjects.map((project: Project, index: number) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

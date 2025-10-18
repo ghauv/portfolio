@@ -1,4 +1,4 @@
-export type Focus = "ux" | "dev" | "art" | "design";
+export type Focus = "ux" | "dev" | "art";
 export type SubCategory =
   | "all"
   | "projects"
@@ -16,18 +16,18 @@ export interface SubCategoryConfig {
 export const CATEGORIES_CONFIG: Record<Focus, SubCategoryConfig[]> = {
   ux: [
     { id: "all", label: "Tous" },
-    { id: "projects", label: "Projets" },
-    { id: "redesigns", label: "Redesigns" },
+    { id: "projects", label: "Projet client" },
+    { id: "redesigns", label: "Redesign personnel" },
   ],
   dev: [
     { id: "all", label: "Tous" },
-    { id: "teamProjects", label: "Projets d'équipe" },
-    { id: "personnalProjects", label: "Projets personnels" },
+    { id: "teamProjects", label: "Projet client" },
+    { id: "personnalProjects", label: "Projet personnel" },
   ],
   art: [
     { id: "all", label: "Tous" },
-    { id: "objects", label: "Objets" },
-    { id: "acrylics", label: "Acryliques" },
+    { id: "objects", label: "Objet" },
+    { id: "acrylics", label: "Acrylique" },
   ],
-  design: [{ id: "all", label: "Tous" }],
+  // design: [{ id: "all", label: "Tous" }],
 };

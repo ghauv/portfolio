@@ -17,12 +17,12 @@ export default function FocusButtons({
       ux: "UX/UI Designer",
       dev: "Fullstack Developer",
       art: "Artist",
-      design: "Graphic Designer",
+      // design: "Graphic Designer",
     };
     return labels[exp];
   };
 
-  const allExpertises: Focus[] = ["ux", "dev", "art", "design"];
+  const allExpertises: Focus[] = ["ux", "dev", "art"];
   const [displayedButtons, setDisplayedButtons] = useState<Focus[]>(
     allExpertises.filter((exp) => exp !== currentFocus)
   );
