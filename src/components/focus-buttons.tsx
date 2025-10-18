@@ -61,7 +61,7 @@ export default function FocusButtons({
           <button
             key={exp}
             onClick={() => handleFocusChange(exp)}
-            className={`group px-4 py-2 rounded-md text-sm font-medium bg-neutral-200 text-muted-foreground hover:bg-neutral-300 whitespace-nowrap
+            className={`group px-4 py-2 rounded-full text-sm font-medium bg-neutral-200 hover:bg-neutral-300 whitespace-nowrap border border-neutral-400
               ${
                 animatingOut === exp
                   ? "transition-all duration-400 ease-in-out translate-x-[-150%] opacity-0"

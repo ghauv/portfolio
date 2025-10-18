@@ -61,7 +61,7 @@ const allUxProjects: Project[] = [
     tags: ["Mobile", "Smart-Medical-Office", "Planning"],
   },
   {
-    title: "Jesus Festival",
+    title: "Billetterie festival",
     type: DeviceType.LAPTOP,
     description:
       "Création application web pour l'intégration d'une billetterie de groupe au festival",

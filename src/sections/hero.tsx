@@ -21,29 +21,31 @@ function HeroContent() {
 
   return (
     <section id="hero" className="md:h-fit section-padding bg-gray-100 flex">
-      <div className="w-full flex flex-row justify-left pt-12 max-w-7xl mx-auto">
-        <div className="max-w-xl lg:max-w-2xl flex flex-col gap-8">
+      <div className="w-full flex flex-col-reverse gap-6 sm:flex-row sm:gap-0 sm:justify-left pt-12 max-w-7xl mx-auto">
+        <div className="max-w-xl lg:max-w-2xl flex flex-col gap-4 sm:gap-8">
           {/* MOI & Badge */}
-          <div className="flex flex-col">
-            <h1 className="text-3xl font-bold tracking-tight">{hero.title}</h1>
-            <p className="text-3xl text-foreground leading-relaxed opacity-80 -mt-2">
+          <div className="flex flex-col ">
+            <h1 className="text-3xl font-bold tracking-tight max-sm:flex max-sm:justify-center">
+              {hero.title}
+            </h1>
+            <p className="text-3xl text-foreground leading-relaxed opacity-80 -mt-2 max-sm:flex max-sm:justify-center">
               {config.badge}
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-md text-foreground text-lg leading-relaxed">
+            <p className="text-sm sm:text-md text-foreground leading-relaxed">
               {hero.firstDescription}
             </p>
-            <p className="text-md text-foreground leading-relaxed opacity-80">
+            <p className="text-sm sm:text-md text-foreground leading-relaxed opacity-80">
               {hero.secondDescription}
             </p>
           </div>
           {/* Other Expertises */}
           <FocusButtons currentFocus={focus} onFocusChange={changeFocus} />
         </div>
-        <div className="w-full justify-items-end lg:pr-10">
+        <div className="w-full justify-items-center sm:justify-items-end lg:pr-10">
           <Image
-            src="/images/hero.png"
+            src="https://i.ibb.co/nqGjSDHG/DSC05337-2.jpg"
             alt="Garance Hauvette"
             width={500}
             height={500}

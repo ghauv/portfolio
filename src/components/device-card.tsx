@@ -15,14 +15,14 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({
   notchClass,
 }) => {
   return (
-    <div className="w-full relative overflow-hidden rounded-t-[1rem] bg-white">
+    <div className="w-full relative overflow-hidden rounded-t-[0.5rem] bg-white">
       {image && (
         <Image
           src={image}
           alt={title}
           width={700}
           height={700}
-          className={`w-full object-cover rounded-t-[1rem] ${borderClass}`}
+          className={`w-full object-cover rounded-t-[0.5rem] ${borderClass}`}
           priority
         />
       )}
