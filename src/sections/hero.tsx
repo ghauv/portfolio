@@ -4,7 +4,7 @@ import { expertiseConfig } from "@/mocks/hero.mock";
 import { Focus } from "@/types/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-// import { ArrowRight } from "phosphor-icons";
+import FocusButtons from "@/components/focus-buttons";
 
 // Composant interne qui utilise useSearchParams
 function HeroContent() {
@@ -13,22 +13,9 @@ function HeroContent() {
   const focus = (searchParams.get("focus") as Focus) || "ux";
 
   const config = expertiseConfig[focus];
-  const otherExpertises = (Object.keys(expertiseConfig) as Focus[]).filter(
-    (exp) => exp !== focus
-  );
 
   const changeFocus = (newFocus: Focus) => {
     router.push(`/?focus=${newFocus}`, { scroll: false });
-  };
-
-  const getExpertiseLabel = (exp: Focus) => {
-    const labels = {
-      ux: "UX/UI Designer",
-      dev: "Fullstack Developer",
-      art: "Artist",
-      design: "Graphic Designer",
-    };
-    return labels[exp];
   };
 
   return (
@@ -52,20 +39,7 @@ function HeroContent() {
           {config.subtitle}
         </p>
         {/* Other Expertises */}
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-sm text-muted-foreground">
-            Je suis également :
-          </span>
-          {otherExpertises.map((exp) => (
-            <button
-              key={exp}
-              onClick={() => changeFocus(exp)}
-              className="group px-4 py-2 rounded-md text-sm font-medium transition-al bg-neutral-200 text-muted-foreground hover:bg-neutral-300"
-            >
-              {getExpertiseLabel(exp)}
-            </button>
-          ))}
-        </div>
+        <FocusButtons currentFocus={focus} onFocusChange={changeFocus} />
       </div>
     </section>
   );

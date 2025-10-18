@@ -37,7 +37,7 @@ function PortfolioContent() {
   return (
     <section id="portfolio" className="min-h-screen section-padding">
       <div className="container mx-auto max-w-7xl">
-        <div className="mb-8">
+        <div className="mb-4 md:mb-8">
           <h2 className="text-xl md:text-3xl font-light tracking-tight text-foreground mb-1">
             Portfolio
           </h2>
@@ -49,7 +49,7 @@ function PortfolioContent() {
           onSubCategoryChange={setSubCategory}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-16 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 lg:gap-16 ">
           {displayedProjects.map((project: Project, index: number) => (
             <ProjectCard key={index} {...project} />
           ))}
@@ -65,7 +65,7 @@ export function Portfolio() {
       fallback={
         <section id="portfolio" className="min-h-screen section-padding">
           <div className="container mx-auto max-w-7xl">
-            <div className="mb-8">
+            <div className="mb-4 md:mb-8">
               <h2 className="text-xl md:text-3xl font-light tracking-tight text-foreground mb-1">
                 Portfolio
               </h2>
