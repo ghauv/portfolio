@@ -29,7 +29,7 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
 }) => {
   if (type === DeviceType.MOBILE) {
     return (
-      <div className="w-full h-fit flex flex-row pt-11">
+      <div className="w-full h-fit flex flex-row pt-16">
         {/* Left device */}
         <div className="flex-1 basis-1/3 aspect-[9/16] -mr-4 z-10 hover:-translate-y-4 transition-transform duration-200">
           <DeviceCard
@@ -70,7 +70,7 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
 
   if (type === DeviceType.LAPTOP) {
     return (
-      <div className="w-full flex flex-row h-fit pt-11">
+      <div className="w-full flex flex-row h-fit pt-16">
         <div className="flex-1 aspect-[16/9] z-10 -translate-y-6 hover:-translate-y-10 transition-transform duration-200">
           <DeviceCard
             image={image || "/placeholder.svg"}

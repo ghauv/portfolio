@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 const clipFrame = (frame: React.ReactNode) => {
   return (
-    <div className="w-full aspect-[16/9] overflow-hidden flex items-start">
+    <div className="w-full aspect-[14/9] overflow-hidden flex items-start">
       {frame}
     </div>
   );
@@ -31,7 +31,7 @@ export function ProjectCard({
   return (
     <div className="group cursor-pointer">
       {/* Device mockup container with elegant background */}
-      <div className="relative mb-8 pt-12 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 overflow-hidden flex w-full">
+      <div className="relative mb-4 md:mb-8 pt-2 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 overflow-hidden flex w-full">
         {clipFrame(
           <DevicesFrame
             type={type}
@@ -48,17 +48,19 @@ export function ProjectCard({
       </div>
 
       {/* Project info */}
-      <div className="space-y-3 px-2">
-        <div className="flex items-center gap-3">
+      <div className="space-y-1 md:space-y-2 px-2">
+        <div className="flex items-center">
           <span className="text-xs uppercase tracking-wider text-muted-foreground">
             {category}
           </span>
         </div>
-        <h3 className="text-2xl font-medium text-foreground group-hover:text-accent transition-colors">
+        <h3 className="text-md sm:text-lg md:text-xl font-medium text-foreground group-hover:text-accent transition-colors">
           {title}
         </h3>
-        <p className="text-muted-foreground leading-relaxed">{description}</p>
-        <div className="text-xs flex flex-wrap gap-2 pt-2">
+        <p className="text-neutral-500 leading-relaxed text-xs sm:text-sm md:text-md">
+          {description}
+        </p>
+        <div className="text-sm flex flex-wrap gap-2 pt-2">
           {
             tags.map((tag: string, index: number) => (
               <span
