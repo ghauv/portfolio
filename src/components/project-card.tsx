@@ -2,6 +2,7 @@
 import { DevicesFrame, DeviceType } from "./devices-frame";
 import { ProjectTemplate } from "@/mocks/portfolio.mock";
 import { CATEGORIES_CONFIG, Focus, SubCategory } from "@/types/types";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -34,7 +35,6 @@ export function ProjectCard({
   tags,
   template,
 }: ProjectCardProps) {
-  // Récupérer le label de la subcategory
   const getSubcategoryLabel = () => {
     const focus = category as Focus;
     const subCat = subcategory as SubCategory;
@@ -44,6 +44,8 @@ export function ProjectCard({
     );
     return subCategoryConfig?.label || subcategory;
   };
+
+  const hasImage = image || images;
 
   return (
     <div className="group cursor-pointer">
@@ -62,7 +64,9 @@ export function ProjectCard({
           )
         ) : (
           <div className="w-full aspect-square overflow-hidden flex items-center">
-            <img src={image} alt={title} width={1000} height={1000} />
+            {image && (
+              <Image src={image} alt={title} width={700} height={700} />
+            )}
           </div>
         )}
 
