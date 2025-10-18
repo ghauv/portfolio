@@ -36,7 +36,7 @@ function HeroContent() {
       id="hero"
       className="md:h-[60vh] section-padding bg-gray-100 flex items-end justify-left"
     >
-      <div className="container mx-auto max-w-7xl py-1">
+      <div className="container mx-auto max-w-7xl pt-12 pb-3 sm:py-2 md:py-1">
         {/* Badge */}
         <div className="mb-5">
           <span className="text-md text-muted-foreground px-2 py-1 bg-neutral-300">

@@ -30,13 +30,49 @@ body {
 .header-padding {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (width >= 40rem) {
+  .header-padding {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+}
+
+@media (width >= 48rem) { 
+  .header-padding {
+    padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 5rem;
   padding-right: 5rem;
 }
+}
 
 .section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (width >= 40rem) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+}
+
+@media (width >= 48rem) { 
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
