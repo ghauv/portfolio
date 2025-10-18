@@ -26,7 +26,7 @@ function HeroContent() {
       <div className="container mx-auto max-w-7xl pt-12 pb-3 sm:py-2 md:py-1">
         {/* Badge */}
         <div className="mb-5">
-          <span className="text-md text-muted-foreground px-2 py-1 bg-neutral-300">
+          <span className="text-md text-muted-foreground px-2 py-1 bg-black text-white">
             {config.badge}
           </span>
         </div>

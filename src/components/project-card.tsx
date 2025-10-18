@@ -17,11 +17,7 @@ interface ProjectCardProps {
 }
 
 const clipFrame = (frame: React.ReactNode) => {
-  return (
-    <div className="w-full aspect-[14/9] overflow-hidden flex items-start">
-      {frame}
-    </div>
-  );
+  return <div className="w-[calc(100%+4rem)] flex items-start">{frame}</div>;
 };
 
 export function ProjectCard({
@@ -50,9 +46,10 @@ export function ProjectCard({
   return (
     <div className="group cursor-pointer">
       {/* Device mockup container with elegant background */}
-      <div className="relative mb-4 md:mb-8 pt-2 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 overflow-hidden flex w-full">
-        {template === "web" && type ? (
-          clipFrame(
+
+      {template === "web" && type ? (
+        <div className="relative mb-4 md:mb-8 pt-2 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 flex aspect-[14/9] overflow-y-clip">
+          {clipFrame(
             <DevicesFrame
               type={type}
               title={title}
@@ -61,18 +58,20 @@ export function ProjectCard({
               borderClass={"border-1 border-gray-200"}
               notchClass={"bg-gray-200"}
             />
-          )
-        ) : (
+          )}
+        </div>
+      ) : (
+        <div className="relative mb-4 md:mb-8 pt-2 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 flex ">
           <div className="w-full aspect-square overflow-hidden flex items-center">
             {image && (
               <Image src={image} alt={title} width={700} height={700} />
             )}
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Decorative gradient overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> */}
-      </div>
+      {/* Decorative gradient overlay */}
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> */}
 
       {/* Project info */}
       <div className="space-y-1 md:space-y-2 px-2">
