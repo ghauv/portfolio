@@ -29,10 +29,10 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
 }) => {
   if (type === DeviceType.MOBILE) {
     return (
-      <div className="w-full h-fit flex flex-row pt-16">
+      <div className="w-full h-fit flex flex-row pt-16 group">
         {/* Left device */}
         <div
-          className="flex-1 basis-1/3 aspect-[9/16] -mr-4 z-10 hover:-translate-y-4 transition-transform duration-200 rounded-t-[1rem]"
+          className="flex-1 basis-1/3 aspect-[9/16] -mr-4 z-10 group-hover:-translate-y-4 transition-transform duration-200 rounded-t-[1rem]"
           style={{ boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)" }}
         >
           <DeviceCard
@@ -45,7 +45,7 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
 
         {/* Center device (elevated) */}
         <div
-          className="flex-1 basis-1/3 aspect-[9/16] z-20 -translate-y-6 hover:-translate-y-10 transition-transform duration-200 rounded-t-[1rem]"
+          className="flex-1 basis-1/3 aspect-[9/16] z-20 -translate-y-6 group-hover:-translate-y-10 transition-transform duration-200 rounded-t-[1rem]"
           style={{ boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)" }}
         >
           <DeviceCard
@@ -58,7 +58,7 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
 
         {/* Right device */}
         <div
-          className="flex-1 basis-1/3 aspect-[9/16] -ml-4 z-10 hover:-translate-y-4 transition-transform duration-200 rounded-t-[1rem]"
+          className="flex-1 basis-1/3 aspect-[9/16] -ml-4 z-10 group-hover:-translate-y-4 transition-transform duration-200 rounded-t-[1rem]"
           style={{ boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)" }}
         >
           <DeviceCard

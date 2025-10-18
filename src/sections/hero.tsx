@@ -1,10 +1,11 @@
 "use client";
 
-import { expertiseConfig } from "@/mocks/hero.mock";
+import { expertiseConfig, hero } from "@/mocks/hero.mock";
 import { Focus } from "@/types/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import FocusButtons from "@/components/focus-buttons";
+import Image from "next/image";
 
 // Composant interne qui utilise useSearchParams
 function HeroContent() {
@@ -19,27 +20,36 @@ function HeroContent() {
   };
 
   return (
-    <section
-      id="hero"
-      className="md:h-[60vh] section-padding bg-gray-100 flex items-end justify-left"
-    >
-      <div className="container mx-auto max-w-7xl pt-12 pb-3 sm:py-2 md:py-1">
-        {/* Badge */}
-        <div className="mb-5">
-          <span className="text-md text-muted-foreground px-2 py-1 bg-black text-white">
-            {config.badge}
-          </span>
+    <section id="hero" className="md:h-fit section-padding bg-gray-100 flex">
+      <div className="w-full flex flex-row justify-left pt-12 max-w-7xl mx-auto">
+        <div className="max-w-xl lg:max-w-2xl flex flex-col gap-8">
+          {/* MOI & Badge */}
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-bold tracking-tight">{hero.title}</h1>
+            <p className="text-3xl text-foreground leading-relaxed opacity-80 -mt-2">
+              {config.badge}
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-md text-foreground text-lg leading-relaxed">
+              {hero.firstDescription}
+            </p>
+            <p className="text-md text-foreground leading-relaxed opacity-80">
+              {hero.secondDescription}
+            </p>
+          </div>
+          {/* Other Expertises */}
+          <FocusButtons currentFocus={focus} onFocusChange={changeFocus} />
         </div>
-        <h2
-          className={`h-20 text-2xl md:text-4xl font-bold tracking-tight mb-6 ${config.color} text-balance max-w-3xl`}
-        >
-          {config.title}
-        </h2>
-        <p className="text-md text-muted-foreground leading-relaxed mb-8">
-          {config.subtitle}
-        </p>
-        {/* Other Expertises */}
-        <FocusButtons currentFocus={focus} onFocusChange={changeFocus} />
+        <div className="w-full justify-items-end lg:pr-10">
+          <Image
+            src="/images/hero.png"
+            alt="Garance Hauvette"
+            width={500}
+            height={500}
+            className="w-30 h-30 bg-black rounded-full"
+          />
+        </div>
       </div>
     </section>
   );
