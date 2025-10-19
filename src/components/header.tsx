@@ -1,11 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import FocusButtons from "./focus-buttons";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Focus } from "@/types/types";
 // import { Button } from "@components/ui/button";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const focus = (searchParams.get("focus") as Focus) || "ux";
+
+  const changeFocus = (newFocus: Focus) => {
+    router.push(`/?focus=${newFocus}`, { scroll: false });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,13 +114,12 @@ export function Header() {
     >
       <div className="container mx-auto max-w-7xl">
         <nav className="flex items-center justify-end">
-          <div id="nav-focus" className="hidden">
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="text-lg font-medium text-foreground hover:text-accent transition-colors"
-            >
-              Garance
-            </button>
+          <div id="nav-focus" className="">
+            <FocusButtons
+              currentFocus={focus}
+              onFocusChange={changeFocus}
+              location="header"
+            />
           </div>
 
           <div

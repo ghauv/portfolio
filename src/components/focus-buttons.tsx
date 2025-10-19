@@ -6,11 +6,13 @@ import { useState } from "react";
 interface FocusButtonsProps {
   currentFocus: Focus;
   onFocusChange: (focus: Focus) => void;
+  location: "hero" | "header";
 }
 
 export default function FocusButtons({
   currentFocus,
   onFocusChange,
+  location,
 }: FocusButtonsProps) {
   const getExpertiseLabel = (exp: Focus) => {
     const labels = {
@@ -59,7 +61,8 @@ export default function FocusButtons({
       <div className="relative flex gap-2 overflow-visible">
         {displayedButtons.map((exp, index) => (
           <button
-            key={exp}
+            id={`${location}-${exp}`}
+            key={`${location}-${exp}`}
             onClick={() => handleFocusChange(exp)}
             className={`group px-4 py-2 rounded-full text-sm font-medium bg-neutral-200 hover:bg-neutral-300 whitespace-nowrap border border-neutral-400
               ${

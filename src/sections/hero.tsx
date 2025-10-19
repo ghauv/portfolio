@@ -41,7 +41,11 @@ function HeroContent() {
             </p>
           </div>
           {/* Other Expertises */}
-          <FocusButtons currentFocus={focus} onFocusChange={changeFocus} />
+          <FocusButtons
+            currentFocus={focus}
+            onFocusChange={changeFocus}
+            location="hero"
+          />
         </div>
         <div className="w-full flex justify-center sm:justify-end lg:pr-10">
           <Image
