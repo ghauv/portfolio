@@ -43,7 +43,7 @@ function HeroContent() {
           {/* Other Expertises */}
           <FocusButtons currentFocus={focus} onFocusChange={changeFocus} />
         </div>
-        <div className="w-full flex justify-center sm:justify-items-end lg:pr-10">
+        <div className="w-full flex justify-center sm:justify-end lg:pr-10">
           <Image
             src="https://i.ibb.co/nqGjSDHG/DSC05337-2.jpg"
             alt="Garance Hauvette"

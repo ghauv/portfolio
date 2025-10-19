@@ -54,7 +54,7 @@ export default function FocusButtons({
   };
 
   return (
-    <div className="flex flex-wrap gap-2 items-center">
+    <div id="focus-buttons" className="flex flex-wrap gap-2 items-center">
       <span className="text-sm text-muted-foreground">Je suis également :</span>
       <div className="relative flex gap-2 overflow-visible">
         {displayedButtons.map((exp, index) => (
