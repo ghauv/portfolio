@@ -52,11 +52,11 @@ export function Header() {
     } else if (scrollDir === "down") {
       if (preventNextCollapse.current) {
         // Première fois après click : on empêche le repli et on reset
-        console.log("→ Protection activée, on ne replie pas");
+        // console.log("→ Protection activée, on ne replie pas");
         preventNextCollapse.current = false;
       } else {
         // Comportement normal : repli
-        console.log("→ Repli normal");
+        // console.log("→ Repli normal");
         setExpandedNavLinks(false);
         setExpandedFocus(false);
       }
@@ -84,7 +84,8 @@ export function Header() {
 
   // Dérivés d'affichage
   const showNavFocus = compact;
-  const showAllNavLinks = !compact || expandedNavLinks;
+  const showAllNavLinks =
+    !compact || expandedNavLinks || activeSection === "contact";
 
   const visibleNavLinks: SectionKey[] = (() => {
     if (showAllNavLinks) return ["portfolio", "resume", "about", "contact"];
