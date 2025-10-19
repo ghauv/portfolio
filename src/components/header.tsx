@@ -24,6 +24,7 @@ export function Header() {
   );
   const [expandedNavLinks, setExpandedNavLinks] = useState(true);
   const [expandedFocus, setExpandedFocus] = useState(false);
+  const preventNextCollapse = useRef<boolean>(false);
 
   // Mise à jour du focus depuis les query params
   useEffect(() => {
@@ -47,9 +48,18 @@ export function Header() {
     // compact === true
     if (scrollDir === "up") {
       setExpandedNavLinks(true);
+      preventNextCollapse.current = false;
     } else if (scrollDir === "down") {
-      setExpandedNavLinks(false);
-      setExpandedFocus(false);
+      if (preventNextCollapse.current) {
+        // Première fois après click : on empêche le repli et on reset
+        console.log("→ Protection activée, on ne replie pas");
+        preventNextCollapse.current = false;
+      } else {
+        // Comportement normal : repli
+        console.log("→ Repli normal");
+        setExpandedNavLinks(false);
+        setExpandedFocus(false);
+      }
     }
   }, [compact, scrollDir]);
 
@@ -60,7 +70,11 @@ export function Header() {
     }
   };
 
-  const onNavClick = () => setExpandedNavLinks(true);
+  const onNavClick = () => {
+    console.log("🔵 Click sur navLink - activation de la protection");
+    setExpandedNavLinks(true);
+    preventNextCollapse.current = true;
+  };
   const onFocusClick = () => setExpandedFocus(true);
 
   const changeFocus = (newFocus: FocusKey) => {
