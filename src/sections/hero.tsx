@@ -19,9 +19,15 @@ function HeroContent() {
     router.push(`/?focus=${newFocus}`, { scroll: false });
   };
 
+  const backgroundColor = config.color.background; // Fallback
+
   return (
-    <section id="hero" className="md:h-fit section-padding bg-gray-100 flex">
-      <div className="w-full flex flex-col-reverse gap-6 sm:flex-row sm:gap-0 sm:justify-left pt-12 max-w-7xl mx-auto">
+    <section
+      id="hero"
+      className="md:h-fit section-padding flex transition-colors "
+      style={{ backgroundColor }}
+    >
+      <div className="w-full flex flex-col-reverse gap-6 sm:flex-row sm:gap-0 sm:justify-left pt-12 pb-2 max-w-7xl mx-auto">
         <div className="max-w-xl lg:max-w-2xl flex flex-col gap-4 sm:gap-8">
           {/* MOI & Badge */}
           <div className="flex flex-col ">
@@ -65,7 +71,10 @@ export function Hero() {
   return (
     <Suspense
       fallback={
-        <section className="md:h-[60vh] section-padding bg-gray-100 flex items-end justify-left">
+        <section
+          className="md:h-[60vh] section-padding flex items-end justify-left"
+          style={{ backgroundColor: "#FCF7F1" }}
+        >
           <div className="container mx-auto max-w-7xl py-1">
             <div className="mb-5">
               <span className="text-md text-muted-foreground px-2 py-1 bg-neutral-300">
