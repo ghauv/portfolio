@@ -3,6 +3,7 @@ import { DeviceType } from "@/components/devices-frame";
 export type ProjectTemplate = "web" | "art";
 
 interface BaseProject {
+  id: number;
   title: string;
   description: string;
   category: string;
@@ -30,6 +31,7 @@ export type Project = MobileProject | LaptopProject | ArtProject;
 
 const allUxProjects: Project[] = [
   {
+    id: 1,
     title: "Decathlon",
     type: DeviceType.MOBILE,
     description: "Pour l'application mobile Smart Office Decathlon",
@@ -38,13 +40,43 @@ const allUxProjects: Project[] = [
     template: "web",
     published: true,
     images: [
-      "https://i.ibb.co/DxdkSxS/decath-1.png",
+      "https://i.ibb.co/Y4TBYx43/Re-servation.png",
       "https://i.ibb.co/0pZ5wp3R/decath-2.png",
       "https://i.ibb.co/5WSW1vtw/decath-3.png",
     ],
     tags: ["Mobile", "Smart-Office"],
   },
   {
+    id: 2,
+    title: "Billetterie festival",
+    type: DeviceType.LAPTOP,
+    description:
+      "Création application web pour l'intégration d'une billetterie de groupe au festival",
+    category: "ux",
+    subcategory: "projects",
+    template: "web",
+    published: true,
+    image: "https://i.ibb.co/nqY6Cr1p/jesus-festival.png",
+    tags: ["Web", "Billetterie"],
+  },
+  {
+    id: 3,
+    title: "Apple Plan",
+    type: DeviceType.MOBILE,
+    description: "Redesign et intégration des filtres ",
+    category: "ux",
+    subcategory: "redesigns",
+    template: "web",
+    published: true,
+    images: [
+      "https://i.ibb.co/wFdgnkTG/BAD-Location-01-3.png",
+      "https://i.ibb.co/7xff8mwc/bad-2.png",
+      "https://i.ibb.co/jP09qk8M/bad-3.png",
+    ],
+    tags: ["Mobile", "Filtres"],
+  },
+  {
+    id: 4,
     title: "Radio Planning",
     type: DeviceType.MOBILE,
     description:
@@ -61,21 +93,11 @@ const allUxProjects: Project[] = [
     tags: ["Mobile", "Smart-Medical-Office", "Planning"],
   },
   {
-    title: "Billetterie festival",
-    type: DeviceType.LAPTOP,
-    description:
-      "Création application web pour l'intégration d'une billetterie de groupe au festival",
-    category: "ux",
-    subcategory: "projects",
-    template: "web",
-    published: true,
-    image: "https://i.ibb.co/nqY6Cr1p/jesus-festival.png",
-    tags: ["Web", "Billetterie"],
-  },
-  {
+    id: 5,
     title: "Atelier Bizet",
     type: DeviceType.LAPTOP,
-    description: "Refonte application web d'un atelier haute couture",
+    description:
+      "Refonte du site vitrine de l'atelier afin de créer une stratégie de contenu plus efficace",
     category: "ux",
     subcategory: "projects",
     template: "web",
@@ -85,6 +107,7 @@ const allUxProjects: Project[] = [
     tags: ["Web", "Haute-Couture"],
   },
   {
+    id: 6,
     title: "Emblem",
     type: DeviceType.MOBILE,
     description:
@@ -95,25 +118,10 @@ const allUxProjects: Project[] = [
     published: true,
     images: [
       "https://i.ibb.co/7dX43Twf/emblem-1.png",
-      "https://i.ibb.co/7dX43Twf/emblem-1.png",
+      "https://i.ibb.co/WpqyywVj/Liste-Cadeaux.png",
       "https://i.ibb.co/vCMnHfdv/emblem-2.png",
     ],
     tags: ["Mobile", "Map"],
-  },
-  {
-    title: "Apple Plan",
-    type: DeviceType.MOBILE,
-    description: "Redesign et intégration des filtres ",
-    category: "ux",
-    subcategory: "redesigns",
-    template: "web",
-    published: true,
-    images: [
-      "https://i.ibb.co/wFdgnkTG/BAD-Location-01-3.png",
-      "https://i.ibb.co/7xff8mwc/bad-2.png",
-      "https://i.ibb.co/jP09qk8M/bad-3.png",
-    ],
-    tags: ["Mobile", "Filtres"],
   },
 ];
 
@@ -121,6 +129,7 @@ export const uxProjects = allUxProjects.filter((p) => p.published);
 
 const allDevProjects: Project[] = [
   {
+    id: 7,
     title: "LVMH",
     type: DeviceType.LAPTOP,
     description: "Refonte du site vitrine de la holding",
@@ -133,6 +142,7 @@ const allDevProjects: Project[] = [
     tags: ["Web", "Prismic", "Next.js", "Nest.js", "GCP", "Algolia", "ATS"],
   },
   {
+    id: 8,
     title: "Club des Actionnaires LVMH",
     type: DeviceType.LAPTOP,
     description: "Refonte du site du club des actionnaires",
@@ -145,6 +155,7 @@ const allDevProjects: Project[] = [
     tags: ["Web", "Prismic", "Next.js", "Nest.js", "AzureDevOps", "Adyen"],
   },
   {
+    id: 9,
     title: "Jardin d'Acclimatation LVMH",
     type: DeviceType.LAPTOP,
     description: "Refonte du site vitrine de la holding",
@@ -165,6 +176,7 @@ const allDevProjects: Project[] = [
     ],
   },
   {
+    id: 10,
     title: "Satisfy Running",
     type: DeviceType.LAPTOP,
     description: "Refonte du site vitrine de la holding",
@@ -177,6 +189,7 @@ const allDevProjects: Project[] = [
     tags: ["Web", "Shopify", "Klavio"],
   },
   {
+    id: 11,
     title: "Gemy Automobiles",
     type: DeviceType.LAPTOP,
     description: "Refonte du site du conssessionnaire automobile",
@@ -188,12 +201,30 @@ const allDevProjects: Project[] = [
       "https://i.ibb.co/jkGXkY85/Capture-d-e-cran-2025-10-18-a-15-32-57.png",
     tags: ["Web", "Refine", "Node.js"],
   },
+  {
+    id: 12,
+    title: "Apple Plan",
+    type: DeviceType.MOBILE,
+    description:
+      "Redéveloppement de l'application et intégration de nouvelles features",
+    category: "dev",
+    subcategory: "personnalProjects",
+    template: "web",
+    published: true,
+    images: [
+      "https://i.ibb.co/wFdgnkTG/BAD-Location-01-3.png",
+      "https://i.ibb.co/7xff8mwc/bad-2.png",
+      "https://i.ibb.co/jP09qk8M/bad-3.png",
+    ],
+    tags: ["Mobile", "Swift"],
+  },
 ];
 
 export const devProjects = allDevProjects.filter((p) => p.published);
 
 const allArtProjects: ArtProject[] = [
   {
+    id: 13,
     title: "Plan d'eau",
     description: "Plan d'eau à l'acrylique",
     category: "art",
@@ -205,6 +236,7 @@ const allArtProjects: ArtProject[] = [
     tags: ["Acrylique", "A3"],
   },
   {
+    id: 14,
     title: "Visage sur verre",
     description: "Peinture acrylique sur verre",
     category: "art",
@@ -215,6 +247,7 @@ const allArtProjects: ArtProject[] = [
     tags: ["Verre", "Acrylique"],
   },
   {
+    id: 15,
     title: "Personnage sur terre cuite",
     description: "Peinture acrylique sur terre cuite",
     category: "art",
@@ -225,6 +258,7 @@ const allArtProjects: ArtProject[] = [
     tags: ["Terre cuite", "Acrylique"],
   },
   {
+    id: 16,
     title: "People views",
     description: "Vue d'une foule",
     category: "art",
@@ -235,6 +269,7 @@ const allArtProjects: ArtProject[] = [
     tags: ["Aquarelle"],
   },
   {
+    id: 17,
     title: "Grenouille",
     description: "Grenouille à l'acrylique",
     category: "art",

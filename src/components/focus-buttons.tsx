@@ -87,22 +87,7 @@ export default function FocusButtons({
 
   return (
     <div id="focus-buttons" className="flex flex-col gap-4">
-      {/* <div className="flex flex-wrap gap-2 items-start h-fit"> */}
-      {/* <span className="text-sm text-muted-foreground">
-          Je fais de la conception produit
-        </span>
-        <div className="flex gap-2 w-full">
-          <FocusButton exp="ux" />
-        </div>
-      </div> */}
       <div className="flex flex-wrap gap-2 justify-start">
-        <span className="text-sm text-muted-foreground mb-2">
-          <>
-            Je fais de la <strong>conception produit</strong>, mais je suis
-            aussi <strong>développeuse fullstack</strong> et passionnée d&apos;
-            <strong>art</strong>
-          </>
-        </span>
         {allExpertises.map((exp) => (
           <FocusButton key={exp} exp={exp} />
         ))}

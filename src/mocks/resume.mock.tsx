@@ -1,5 +1,9 @@
 export const skills = {
-  Writing: ["Documentation", "Technical Writing", "Content Strategy"],
+  Writing: [
+    "Contenu stratéDocumentation",
+    "Technical Writing",
+    "Content Strategy",
+  ],
   Design: ["UX/UI", "Prototyping", "Design Systems", "Figma"],
   Research: ["User Research", "Usability Testing", "Analytics"],
   Development: ["React", "Next.js", "TypeScript", "Shopify"],
@@ -8,53 +12,67 @@ export const skills = {
 
 export const education = [
   {
-    degree: "Master en Design & Management de l'Innovation Interactive",
-    school: "Gobelins, l'école de l'image",
-    period: "2018 — 2020",
-    location: "Paris, France",
+    degree: "Cycle Ingénieur Informatique",
+    school: "Ensimag",
+    period: "2020 - 2023",
+    location: "Grenoble, France",
   },
   {
-    degree: "Bachelor en Design Graphique",
-    school: "École de Design",
-    period: "2015 — 2018",
-    location: "Paris, France",
+    degree: "Master web design and development",
+    school: "McMaster University",
+    period: "2022 - 2023",
+    location: "Hamilton (ON), Canada",
+  },
+  {
+    degree: "Classes Préparatoires aux Grandes Écoles",
+    school: "Lycée Pasteur",
+    period: "2018 - 2020",
+    location: "Neuilly-sur-Seine, France",
   },
 ];
 
 export const roles = [
   {
     title: "Développeuse Fullstack",
-    period: "2020 — Present",
+    period: "2023 - Maintenant",
     projects: [
       {
         company: "LVMH",
         description:
-          "Casquette de PM, développement e-commerce et outils internes",
+          "Refonte fullstack des sites webs grands publics de la holding. Lvmh.com, club des actionnaires et jardin d'acclimation. Développement front, conception architecture back, interfaçage APIs, développement front et DevOps.",
       },
       {
         company: "Unibail",
-        description: "Développement e-commerce et outils internes",
+        description: "Développement outils internes",
       },
       {
         company: "Satisfy Running",
-        description: "Développement e-commerce",
+        description:
+          "Refonte du site web e-commerce Shopify. \n Intégration design system. \n Coordination des MEPs",
       },
     ],
   },
   {
     title: "UX Designer",
-    period: "2018 — 2020",
+    period: "2022 - Maintenant",
     projects: [
       {
         company: "Decathlon",
-        description: "Conception d'interfaces et recherche utilisateur",
+        description:
+          "Pour l’application et le site web Smart Office Decathlon. \n Intégration du design system. \n Conception des parcours utilisateurs. \n Wireframing. \n Réalisation des maquettes HD",
+      },
+      {
+        company: "Billetterie Festival",
+        description:
+          "Pour la billetterie de groupe du J Festival. \n Benchmark du secteur. \n Conduite d’interviews utilisateurs. \n Analyse et formalisation des retours utilisateurs. \n Conception des parcours utilisateurs. \n Wireframing. \n Réalisation des maquettes HD",
+      },
+      {
+        company: "Atelier Bizet",
+        description:
+          "Pour le site vitrine de l'atelier haute couture Bizet. Benchmark du secteur. Conception des parcours utilisateurs.\n Wireframing. \n Réalisation des maquettes HD ",
       },
       {
         company: "Radioplanning",
-        description: "Conception d'interfaces et recherche utilisateur",
-      },
-      {
-        company: "App Emile",
         description: "Conception d'interfaces et recherche utilisateur",
       },
       {
@@ -65,22 +83,23 @@ export const roles = [
   },
   {
     title: "Graphic Designer",
-    period: "2016 — 2018",
+    period: "2022",
     projects: [
       {
-        company: "Junior Entrepreneurs",
-        description: "Création de chartes graphiques et identités visuelles",
+        company: "Confédération Nationale des Junior-Entreprises",
+        description:
+          "Création d'un charte graphique et d'une identité visuelle pour un congrès de Junior-Entreprises.",
       },
     ],
   },
   {
-    title: "Organisatrice Programme Formation",
-    period: "2017",
+    title: "Pitch My Product Team organizer",
+    period: "2025",
     projects: [
       {
-        company: "Programme Produit",
+        company: "PMP Saison 2",
         description:
-          "Création de charte graphique et organisation de formations",
+          "Organisation d'un challenge interne de Codyssée, qui pousse les collaborateurs à développer et pitcher un concept de produit digital innovant.",
       },
     ],
   },
