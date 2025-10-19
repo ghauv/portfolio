@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { Focus } from "@/types/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useScrollDir } from "@/hooks/useScrollDir";
@@ -9,7 +9,7 @@ import { useCompactNav } from "@/hooks/useCompactNav";
 
 type FocusKey = Focus;
 
-export function Header() {
+function HeaderContent() {
   const [isScrolled, setIsScrolled] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -222,5 +222,34 @@ export function Header() {
         </nav>
       </div>
     </header>
+  );
+}
+
+export function Header() {
+  return (
+    <Suspense
+      fallback={
+        <header
+          id="main-header"
+          role="banner"
+          className="header-padding fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"
+        >
+          <div className="container mx-auto max-w-7xl">
+            <nav
+              aria-label="Navigation principale"
+              className="flex items-center transition-all duration-500 justify-end"
+            >
+              <div className="flex items-center gap-2 py-1.5 px-3 sm:gap-8 sm:py-3 sm:px-5 rounded-full bg-transparent">
+                <span className="text-sm text-muted-foreground">
+                  Chargement...
+                </span>
+              </div>
+            </nav>
+          </div>
+        </header>
+      }
+    >
+      <HeaderContent />
+    </Suspense>
   );
 }
