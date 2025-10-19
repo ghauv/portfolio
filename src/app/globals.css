@@ -27,6 +27,32 @@ body {
 
 /* custom css */
 
+/* accessibility */
+.sr-only-focusable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: revert;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* section padding */
+
 .header-padding {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -76,6 +102,8 @@ body {
     padding-right: 5rem;
   }
 }
+
+/* animations */
 
 @keyframes slide-in {
   from {

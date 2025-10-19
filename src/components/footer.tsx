@@ -6,6 +6,9 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Garance. Tous droits réservés.
           </p>
+          <a href="#main-header" className="text-sm">
+            Retour en haut de page
+          </a>
           <p className="text-sm text-muted-foreground">
             Conçu et développé avec soin
           </p>
