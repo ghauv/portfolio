@@ -31,16 +31,17 @@ function HeaderContent() {
     return (
       <button
         onClick={() => scrollToSection(id)}
-        className={`relative text-sm pb-1 transition-colors ${
+        className={`relative text-sm transition-colors ${
           isActive
-            ? "text-foreground"
-            : "text-muted-foreground hover:text-foreground"
+            ? "text-neutral-900"
+            : "text-neutral-500 hover:text-foreground"
         }`}
+        style={isActive ? { textShadow: "0 0 0.5px currentColor" } : undefined}
       >
         {label}
-        {isActive && (
+        {/* {isActive && (
           <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground" />
-        )}
+        )} */}
       </button>
     );
   };
@@ -58,7 +59,7 @@ function HeaderContent() {
         >
           <div
             id="nav-sections"
-            className={`flex items-center gap-2 py-1.5 px-3 sm:gap-8 sm:py-3 sm:px-5 rounded-full transition-all duration-300 ${
+            className={`flex items-center gap-6 py-2 pr-3 pl-4 sm:gap-8 sm:py-3 sm:pr-3 sm:pl-5 rounded-full transition-all duration-300 ${
               isScrolled
                 ? "bg-background/20 backdrop-blur-md border-b border-b-neutral-200"
                 : "bg-transparent"
