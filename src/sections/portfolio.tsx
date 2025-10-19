@@ -42,7 +42,7 @@ function PortfolioContent() {
       : mainProjects.filter((p) => p.subcategory === subCategory);
 
   return (
-    <section id="portfolio" className="min-h-screen section-padding">
+    <section id="portfolio" className="h-fit section-padding">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-4 md:mb-8">
           <h2 className="text-xl md:text-3xl font-light tracking-tight text-foreground mb-1">
