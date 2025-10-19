@@ -24,11 +24,11 @@ function HeroContent() {
   return (
     <section
       id="hero"
-      className="md:h-fit section-padding flex transition-colors "
+      className="md:h-fit section-padding flex"
       style={{ backgroundColor }}
     >
       <div className="w-full flex flex-col-reverse gap-6 sm:flex-row sm:gap-0 sm:justify-left pt-12 pb-2 max-w-7xl mx-auto">
-        <div className="max-w-xl lg:max-w-2xl flex flex-col gap-4 sm:gap-8">
+        <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl lg:min-w-2xl flex flex-col gap-4 sm:gap-8">
           {/* MOI & Badge */}
           <div className="flex flex-col ">
             <h1 className="text-3xl font-bold tracking-tight max-sm:flex max-sm:justify-center">
@@ -39,11 +39,17 @@ function HeroContent() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-sm sm:text-md text-foreground leading-relaxed">
+            <p className="text-md sm:text-md md:text-lg leading-relaxed">
               {hero.firstDescription}
             </p>
-            <p className="text-sm sm:text-md text-foreground leading-relaxed opacity-80">
+            <p className="text-sm sm:text-md md:text-md text-foreground leading-relaxed opacity-80">
               {hero.secondDescription}
+            </p>
+            <p className="text-sm sm:text-md md:text-md text-foreground leading-relaxed opacity-80">
+              Je fais de la <strong>conception produit</strong>, mais je suis
+              aussi <strong>développeuse fullstack</strong> et passionnée
+              d&apos;
+              <strong>art</strong>.
             </p>
           </div>
           {/* Other Expertises */}
@@ -54,13 +60,15 @@ function HeroContent() {
           />
         </div>
         <div className="w-full flex justify-center sm:justify-end lg:pr-10">
-          <Image
-            src="https://i.ibb.co/nqGjSDHG/DSC05337-2.jpg"
-            alt="Garance Hauvette"
-            width={500}
-            height={500}
-            className="w-30 h-30 rounded-full"
-          />
+          <div className="w-30 h-30 rounded-full overflow-hidden">
+            <Image
+              src="https://i.ibb.co/nqGjSDHG/DSC05337-2.jpg"
+              alt="Garance Hauvette"
+              width={500}
+              height={500}
+              className=""
+            />
+          </div>
         </div>
       </div>
     </section>
