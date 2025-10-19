@@ -1,4 +1,5 @@
 // import { Badge } from "@/components/ui/badge";
+import { expertiseConfig } from "@/mocks/hero.mock";
 import { DevicesFrame, DeviceType } from "./devices-frame";
 import { ProjectTemplate } from "@/mocks/portfolio.mock";
 import { CATEGORIES_CONFIG, Focus, SubCategory } from "@/types/types";
@@ -40,6 +41,10 @@ export function ProjectCard({
     );
     return subCategoryConfig?.label || subcategory;
   };
+  const focus = category as Focus;
+  const config = expertiseConfig[focus];
+  // const textColor = config.color.primary || "#171717";
+  const textColor = "#000000";
 
   const hasImage = image || images;
 
@@ -76,9 +81,11 @@ export function ProjectCard({
       {/* Project info */}
       <div className="space-y-1 md:space-y-2 px-2">
         <div className="flex items-center">
-          <span className="text-xs uppercase tracking-wider text-muted-foreground">
-            {getSubcategoryLabel()}
-          </span>
+          <div style={{ color: textColor }}>
+            <span className="text-xs uppercase tracking-wider text-muted-foreground">
+              {getSubcategoryLabel()}
+            </span>
+          </div>
         </div>
         <h3 className="text-md sm:text-lg md:text-xl font-medium text-foreground group-hover:text-accent transition-colors">
           {title}

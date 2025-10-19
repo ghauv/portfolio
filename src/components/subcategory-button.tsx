@@ -1,5 +1,6 @@
 "use client";
 
+import { expertiseConfig } from "@/mocks/hero.mock";
 import { CATEGORIES_CONFIG } from "@/types/types";
 import { Focus, SubCategory } from "@/types/types";
 
@@ -15,6 +16,8 @@ export default function SubCategoryButtons({
   onSubCategoryChange,
 }: SubCategoryButtonsProps) {
   const subCategories = CATEGORIES_CONFIG[focus];
+  const config = expertiseConfig[focus];
+  const bgColor = config.color.primary || "#D4D4D4";
 
   return (
     <div className="flex gap-2 flex-wrap">
@@ -27,6 +30,13 @@ export default function SubCategoryButtons({
               ? "bg-foreground text-white"
               : "bg-neutral-100 text-gray-800 hover:bg-neutral-200"
           }`}
+          style={
+            activeSubCategory === subCat.id
+              ? {
+                  backgroundColor: bgColor,
+                }
+              : {}
+          }
         >
           {subCat.label}
         </button>
