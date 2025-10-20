@@ -1,9 +1,11 @@
 export const hero = {
   title: "Garance Hauvette",
   firstDescription:
-    "Designer produit passionnée, je crée des expériences digitales que je sais aussi implémenter. À l'intersection du design, du code et de l'art, je façonne chaque projet selon ses besoins : de l'épure fonctionnelle pour des expériences complexes aux projets où l'esthétique s'affirme.",
+    "Designer produit passionnée, je conçois des expériences digitales que je sais aussi concrétiser. À la croisée du design, du code et de l’art, j’adapte chaque projet à ses enjeux : de l’épure fonctionnelle pour des parcours complexes aux expériences où l’esthétique s’affirme.",
   secondDescription:
-    "Mes trois ans d'expérience fullstack au sein d'équipes projet, ponctuées de missions UX/UI, m'ont permis de collaborer étroitement avec développeurs, product designers et product managers pour co-concevoir, chiffrer, planifier, implémenter et déployer des features robustes de bout en bout.",
+    "Mes trois années d’expérience fullstack au sein d’équipes produit, enrichies de missions UX/UI, m’ont permis de collaborer étroitement avec développeurs, designers et product managers pour co-concevoir, estimer, planifier, implémenter et déployer des fonctionnalités avec un ADN technique fort et une vraie exigence UX de bout en bout.",
+  thirdDescription:
+    "Je conçois avant tout des produits, mais j'aime aussi coder et cultiver un regard artistique sur chaque expérience que je crée.",
 };
 
 export const expertiseConfig = {
