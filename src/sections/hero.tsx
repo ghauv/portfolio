@@ -42,12 +42,13 @@ function HeroContent() {
             <p className="text-md sm:text-md md:text-lg leading-relaxed">
               {hero.firstDescription}
             </p>
-            <p className="text-sm sm:text-md md:text-lg text-foreground leading-relaxed opacity-80">
+            <p className="text-sm sm:text-md md:text-md text-foreground leading-relaxed opacity-80">
               {hero.secondDescription}
             </p>
-            <p className="text-sm sm:text-md md:text-lg text-foreground leading-relaxed opacity-80">
+            <p className="text-sm sm:text-md md:text-md text-foreground leading-relaxed opacity-80">
               {hero.thirdDescription}
             </p>
+
             {/* <p className="text-sm sm:text-md md:text-md text-foreground leading-relaxed opacity-80">
               {hero.secondDescription}
             </p>
