@@ -1,15 +1,11 @@
+import { DeviceType } from "@/types/projects.types";
 import { DeviceCard } from "./device-card";
-
-export enum DeviceType {
-  MOBILE = "mobile",
-  LAPTOP = "laptop",
-}
 
 interface DevicesFrameProps {
   type: DeviceType;
   title: string;
   image?: string;
-  images?: [string, string, string];
+  images?: string[];
   rounded?: string;
   border?: string;
   showNotch?: boolean;
@@ -27,7 +23,7 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
   borderClass,
   notchClass = "gray-200",
 }) => {
-  if (type === DeviceType.MOBILE) {
+  if (type === "mobile") {
     return (
       <div className="w-full h-fit flex flex-row pt-16 group">
         {/* Left device */}
@@ -72,7 +68,7 @@ export const DevicesFrame: React.FC<DevicesFrameProps> = ({
     );
   }
 
-  if (type === DeviceType.LAPTOP) {
+  if (type === "laptop") {
     return (
       <div className="w-full flex flex-row h-fit pt-16">
         <div

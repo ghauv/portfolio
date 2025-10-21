@@ -2,12 +2,8 @@
 
 import { ProjectCard } from "@/components/project-card";
 import SubCategoryButtons from "@/components/subcategory-button";
-import {
-  Project,
-  uxProjects,
-  devProjects,
-  artProjects,
-} from "@/data/portfolio.mock";
+import { artProjects, devProjects, uxProjects } from "@/data/projects";
+import { Project } from "@/types/projects.types";
 import { Focus, SubCategory } from "@/types/types";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";

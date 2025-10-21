@@ -1,40 +1,18 @@
 "use client";
 
-import { DevicesFrame, DeviceType } from "./devices-frame";
-import { ProjectTemplate } from "@/data/portfolio.mock";
+import { DeviceType, Project } from "@/types/projects.types";
+import { DevicesFrame } from "./devices-frame";
 import { CATEGORIES_CONFIG, Focus, SubCategory } from "@/types/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-interface ProjectCardProps {
-  slug: string;
-  title: string;
-  type?: DeviceType;
-  description: string;
-  category: string;
-  subcategory: string;
-  image?: string;
-  images?: [string, string, string];
-  tags: string[];
-  template: ProjectTemplate;
-}
 
 export const clipFrame = (frame: React.ReactNode) => {
   return <div className="w-[calc(100%+4rem)] flex items-start">{frame}</div>;
 };
 
-export function ProjectCard({
-  slug,
-  title,
-  type,
-  description,
-  category,
-  subcategory,
-  image,
-  images,
-  tags,
-  template,
-}: ProjectCardProps) {
+export function ProjectCard(project: Project) {
+  const { slug, title, category, subcategory, tags, template, description } =
+    project;
   const router = useRouter();
 
   const getSubcategoryLabel = () => {
@@ -49,32 +27,41 @@ export function ProjectCard({
 
   const textColor = "#000000";
 
+  const handleClick = () => {
+    // Stocker la position de scroll actuelle
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(
+        "portfolioScrollPosition",
+        window.scrollY.toString()
+      );
+      sessionStorage.setItem("portfolioLastFocus", category);
+      sessionStorage.setItem("portfolioLastSubcategory", subcategory);
+    }
+    router.push(`/${slug}`);
+  };
+
   return (
-    <div
-      className="group cursor-pointer"
-      onClick={() => router.push(`/projects/${slug}`)}
-    >
+    <div className="group cursor-pointer" onClick={handleClick}>
       {/* Device mockup container with elegant background */}
 
-      {template === "web" && type ? (
+      {template === "web" && "deviceType" in project && "images" in project && (
         <div className="relative mb-4 md:mb-8 pt-2 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 flex aspect-[14/9] overflow-y-clip">
           {clipFrame(
             <DevicesFrame
-              type={type}
+              type={project.deviceType as DeviceType}
               title={title}
-              image={image}
-              images={images}
+              image={project.images?.[0]}
+              images={project.images}
               borderClass={"border-1 border-gray-200"}
               notchClass={"bg-gray-200"}
             />
           )}
         </div>
-      ) : (
+      )}
+      {template === "art" && "image" in project && (
         <div className="relative mb-4 md:mb-8 pt-2 px-2 bg-gradient-to-br from-background via-muted/30 to-muted/50 flex ">
           <div className="w-full aspect-square overflow-hidden flex items-center">
-            {image && (
-              <Image src={image} alt={title} width={700} height={700} />
-            )}
+            <Image src={project.image} alt={title} width={700} height={700} />
           </div>
         </div>
       )}
