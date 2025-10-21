@@ -15,4 +15,9 @@ export const planEauData: ArtProject = {
   template: "art",
 
   tags: ["Acrylique", "A3"],
+
+  content: {
+    articleTitle: "Plan d'eau",
+    realization: "Plan d'eau à l'acrylique",
+  },
 };

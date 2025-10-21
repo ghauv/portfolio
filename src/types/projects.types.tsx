@@ -30,6 +30,11 @@ interface DevContent {
   context: string;
   realization: string;
 }
+
+interface ArtContent {
+  articleTitle: string;
+  realization: string;
+}
 export interface UXProject extends BaseProject {
   category: "ux";
   template: "web";
@@ -49,7 +54,7 @@ export interface ArtProject extends BaseProject {
   category: "art";
   template: "art";
   image: string;
-  // Art n'a pas de content spécifique ?
+  content: ArtContent;
 }
 
 export type Project = UXProject | DevProject | ArtProject;

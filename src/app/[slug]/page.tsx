@@ -2,9 +2,11 @@
 import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { allProjects } from "@/data/projects";
-import { UxProjectContent } from "@/components/ux-project-detailed-content";
-import { UXProject } from "@/types/projects.types";
+import { DetailedContentUx } from "@/components/detailed-content-ux";
+import { ArtProject, DevProject, UXProject } from "@/types/projects.types";
 import { BackToProjectsButton } from "@/components/back-to-projects-button";
+import { DetailedContentDev } from "@/components/detailed-content-dev";
+import { DetailedContentArt } from "@/components/detailed-content-art";
 
 interface Props {
   params: { slug: string };
@@ -32,7 +34,13 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </div>
       {project.category === "ux" && (
-        <UxProjectContent project={project as UXProject} />
+        <DetailedContentUx project={project as UXProject} />
+      )}
+      {project.category === "dev" && (
+        <DetailedContentDev project={project as DevProject} />
+      )}
+      {project.category === "art" && (
+        <DetailedContentArt project={project as ArtProject} />
       )}
     </div>
   );

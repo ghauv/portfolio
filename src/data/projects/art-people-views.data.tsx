@@ -15,4 +15,8 @@ export const peopleViewsData: ArtProject = {
   template: "art",
 
   tags: ["Aquarelle"],
+  content: {
+    articleTitle: "People views",
+    realization: "Vue d'une foule",
+  },
 };

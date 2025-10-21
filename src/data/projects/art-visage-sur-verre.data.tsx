@@ -15,4 +15,9 @@ export const visageSurVerreData: ArtProject = {
   template: "art",
 
   tags: ["Verre", "Acrylique"],
+
+  content: {
+    articleTitle: "Visage sur verre",
+    realization: "Peinture acrylique sur verre",
+  },
 };

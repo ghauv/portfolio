@@ -15,4 +15,9 @@ export const grenouilleData: ArtProject = {
   template: "art",
 
   tags: ["Aquarelle"],
+
+  content: {
+    articleTitle: "Grenouille",
+    realization: "Grenouille à l'acrylique",
+  },
 };

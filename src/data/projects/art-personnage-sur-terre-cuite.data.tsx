@@ -15,4 +15,9 @@ export const personnageSurTerreCuiteData: ArtProject = {
   template: "art",
 
   tags: ["Terre cuite", "Acrylique"],
+
+  content: {
+    articleTitle: "Personnage sur terre cuite",
+    realization: "Peinture acrylique sur terre cuite",
+  },
 };

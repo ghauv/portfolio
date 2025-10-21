@@ -9,7 +9,7 @@ interface ProjectDetailProps {
   project: UXProject;
 }
 
-export function UxProjectContent({ project }: ProjectDetailProps) {
+export function DetailedContentUx({ project }: ProjectDetailProps) {
   return (
     <article className="max-w-4xl mx-auto px-6 py-16 md:mt-8">
       {/* Header */}
@@ -104,9 +104,7 @@ export function UxProjectContent({ project }: ProjectDetailProps) {
 
         {project.content.sections.map((section, idx) => (
           <div key={idx} className="mb-16">
-            <h3 className="text-2xl font-semibold mb-8">
-              {idx + 1} - {section.title}
-            </h3>
+            <h3 className="text-2xl font-semibold mb-8">{section.title}</h3>
 
             {/* Medias */}
             <div
