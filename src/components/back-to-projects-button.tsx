@@ -41,7 +41,7 @@ export function BackToProjectsButton({ project }: BackToProjectsButtonProps) {
   return (
     <button
       onClick={handleBackToProjects}
-      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-neutral-600 transition-colors cursor-pointer"
     >
       <svg
         className="w-4 h-4"

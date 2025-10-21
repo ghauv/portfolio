@@ -16,8 +16,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = allProjects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const project = await allProjects.find((p) => p.slug === params.slug);
 
   if (!project) {
     notFound();
@@ -26,8 +26,10 @@ export default function ProjectPage({ params }: Props) {
   return (
     <div>
       <Header />
-      <div className="section-padding pt-8">
-        <BackToProjectsButton project={project} />
+      <div className="max-w-4xl mx-auto px-6  pt-10 mt:py-16 md:mt-8">
+        <div className="pt-16 md:pt-8">
+          <BackToProjectsButton project={project} />
+        </div>
       </div>
       {project.category === "ux" && (
         <UxProjectContent project={project as UXProject} />

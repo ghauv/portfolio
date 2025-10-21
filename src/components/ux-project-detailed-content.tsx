@@ -11,7 +11,7 @@ interface ProjectDetailProps {
 
 export function UxProjectContent({ project }: ProjectDetailProps) {
   return (
-    <article className="max-w-4xl mx-auto px-6 py-16 mt-12 md:mt-8">
+    <article className="max-w-4xl mx-auto px-6 py-16 md:mt-8">
       {/* Header */}
       <header className="mb-6">
         <h1 className="text-4xl md:text-5xl font-bold mb-2">{project.title}</h1>

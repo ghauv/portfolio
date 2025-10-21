@@ -5,18 +5,26 @@ import SubCategoryButtons from "@/components/subcategory-button";
 import { artProjects, devProjects, uxProjects } from "@/data/projects";
 import { Project } from "@/types/projects.types";
 import { Focus, SubCategory } from "@/types/types";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
 function PortfolioContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const focus = (searchParams.get("focus") || "ux") as Focus;
+  const subcategroy = (searchParams.get("subcategory") || "all") as SubCategory;
 
   const [subCategory, setSubCategory] = useState<SubCategory>("all");
 
   useEffect(() => {
-    setSubCategory("all");
-  }, [focus]);
+    setSubCategory(subcategroy);
+  }, [focus, subcategroy]);
+
+  useEffect(() => {
+    router.push(`?focus=${focus}&subcategory=${subCategory}`, {
+      scroll: false,
+    });
+  }, [focus, subCategory]);
 
   // Filtrer les projets
   const mainProjects = (() => {
@@ -53,9 +61,13 @@ function PortfolioContent() {
         />
 
         <div className={`${focus === "art" ? "pt-12 pb-12" : "pb-12"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 lg:gap-16 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 lg:gap-16 mt-6">
             {displayedProjects.map((project: Project, index: number) => (
-              <ProjectCard key={index} {...project} />
+              <ProjectCard
+                key={index}
+                project={project}
+                currentSubcategory={subCategory}
+              />
             ))}
           </div>
         </div>

@@ -24,7 +24,9 @@ export default function SubCategoryButtons({
       {subCategories.map((subCat) => (
         <button
           key={subCat.id}
-          onClick={() => onSubCategoryChange(subCat.id)}
+          onClick={() => {
+            onSubCategoryChange(subCat.id);
+          }}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-al transition-colors ${
             activeSubCategory === subCat.id
               ? "bg-foreground text-white"

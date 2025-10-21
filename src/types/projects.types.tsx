@@ -1,6 +1,5 @@
 export type ProjectFocus = "ux" | "dev" | "art";
 export type DeviceType = "mobile" | "laptop";
-
 interface BaseProject {
   id: number;
   slug: string;
@@ -13,7 +12,6 @@ interface BaseProject {
   tags: string[];
   published: boolean;
 }
-
 interface UXContent {
   articleTitle: string;
   context: string;
@@ -27,13 +25,11 @@ interface UXContent {
   finalSolution: FinalSolution;
   conclusion: string;
 }
-
 interface DevContent {
   articleTitle: string;
   context: string;
   realization: string;
 }
-
 export interface UXProject extends BaseProject {
   category: "ux";
   template: "web";
@@ -59,7 +55,6 @@ export interface ArtProject extends BaseProject {
 export type Project = UXProject | DevProject | ArtProject;
 
 // ----------------------------- UX Content specific -----------------------------
-
 export interface Section {
   title: string;
   medias: MediaItem[]; // Peut contenir 1 ou 2 images/vidéos
@@ -79,7 +74,6 @@ export interface MediaItem {
   alt?: string;
   caption?: string;
 }
-
 export interface FinalSolution {
   medias?: MediaItem[];
   text: string;

@@ -10,7 +10,13 @@ export const clipFrame = (frame: React.ReactNode) => {
   return <div className="w-[calc(100%+4rem)] flex items-start">{frame}</div>;
 };
 
-export function ProjectCard(project: Project) {
+export function ProjectCard({
+  project,
+  currentSubcategory,
+}: {
+  project: Project;
+  currentSubcategory: SubCategory;
+}) {
   const { slug, title, category, subcategory, tags, template, description } =
     project;
   const router = useRouter();
@@ -35,7 +41,7 @@ export function ProjectCard(project: Project) {
         window.scrollY.toString()
       );
       sessionStorage.setItem("portfolioLastFocus", category);
-      sessionStorage.setItem("portfolioLastSubcategory", subcategory);
+      sessionStorage.setItem("portfolioLastSubcategory", currentSubcategory);
     }
     router.push(`/${slug}`);
   };
