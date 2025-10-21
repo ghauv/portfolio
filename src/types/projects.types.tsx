@@ -53,7 +53,6 @@ export interface ArtProject extends BaseProject {
   category: "art";
   template: "art";
   image: string;
-  deviceType: undefined;
   // Art n'a pas de content spécifique ?
 }
 
