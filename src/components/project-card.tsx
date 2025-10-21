@@ -1,11 +1,13 @@
-// import { Badge } from "@/components/ui/badge";
-import { expertiseConfig } from "@/mocks/hero.mock";
+"use client";
+
 import { DevicesFrame, DeviceType } from "./devices-frame";
-import { ProjectTemplate } from "@/mocks/portfolio.mock";
+import { ProjectTemplate } from "@/data/portfolio.mock";
 import { CATEGORIES_CONFIG, Focus, SubCategory } from "@/types/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface ProjectCardProps {
+  slug: string;
   title: string;
   type?: DeviceType;
   description: string;
@@ -17,11 +19,12 @@ interface ProjectCardProps {
   template: ProjectTemplate;
 }
 
-const clipFrame = (frame: React.ReactNode) => {
+export const clipFrame = (frame: React.ReactNode) => {
   return <div className="w-[calc(100%+4rem)] flex items-start">{frame}</div>;
 };
 
 export function ProjectCard({
+  slug,
   title,
   type,
   description,
@@ -32,6 +35,8 @@ export function ProjectCard({
   tags,
   template,
 }: ProjectCardProps) {
+  const router = useRouter();
+
   const getSubcategoryLabel = () => {
     const focus = category as Focus;
     const subCat = subcategory as SubCategory;
@@ -41,15 +46,14 @@ export function ProjectCard({
     );
     return subCategoryConfig?.label || subcategory;
   };
-  const focus = category as Focus;
-  const config = expertiseConfig[focus];
-  // const textColor = config.color.primary || "#171717";
+
   const textColor = "#000000";
 
-  const hasImage = image || images;
-
   return (
-    <div className="group cursor-pointer">
+    <div
+      className="group cursor-pointer"
+      onClick={() => router.push(`/projects/${slug}`)}
+    >
       {/* Device mockup container with elegant background */}
 
       {template === "web" && type ? (

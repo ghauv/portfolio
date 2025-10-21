@@ -1,6 +1,6 @@
 "use client";
 
-import { expertiseConfig, hero } from "@/mocks/hero.mock";
+import { expertiseConfig, hero } from "@/data/hero.mock";
 import { Focus } from "@/types/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";

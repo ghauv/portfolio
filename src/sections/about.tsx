@@ -1,4 +1,4 @@
-import { aboutContent } from "@/mocks/about.mock";
+import { aboutContent } from "@/data/about.mock";
 
 export function About() {
   return (

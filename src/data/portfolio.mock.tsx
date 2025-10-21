@@ -4,6 +4,7 @@ export type ProjectTemplate = "web" | "art";
 
 interface BaseProject {
   id: number;
+  slug: string;
   title: string;
   description: string;
   category: string;
@@ -32,6 +33,7 @@ export type Project = MobileProject | LaptopProject | ArtProject;
 const allUxProjects: Project[] = [
   {
     id: 1,
+    slug: "decathlon",
     title: "Decathlon",
     type: DeviceType.MOBILE,
     description: "Pour l'application mobile Smart Office Decathlon",
@@ -48,6 +50,7 @@ const allUxProjects: Project[] = [
   },
   {
     id: 2,
+    slug: "billetterie-festival",
     title: "Billetterie festival",
     type: DeviceType.LAPTOP,
     description:
@@ -61,6 +64,7 @@ const allUxProjects: Project[] = [
   },
   {
     id: 3,
+    slug: "apple-plan",
     title: "Apple Plan",
     type: DeviceType.MOBILE,
     description: "Redesign et intégration des filtres ",
@@ -77,6 +81,7 @@ const allUxProjects: Project[] = [
   },
   {
     id: 4,
+    slug: "radio-planning",
     title: "Radio Planning",
     type: DeviceType.MOBILE,
     description:
@@ -94,6 +99,7 @@ const allUxProjects: Project[] = [
   },
   {
     id: 5,
+    slug: "atelier-bizet",
     title: "Atelier Bizet",
     type: DeviceType.LAPTOP,
     description:
@@ -108,6 +114,7 @@ const allUxProjects: Project[] = [
   },
   {
     id: 6,
+    slug: "emblem",
     title: "Emblem",
     type: DeviceType.MOBILE,
     description:
@@ -130,6 +137,7 @@ export const uxProjects = allUxProjects.filter((p) => p.published);
 const allDevProjects: Project[] = [
   {
     id: 7,
+    slug: "lvmh",
     title: "LVMH",
     type: DeviceType.LAPTOP,
     description: "Refonte du site vitrine de la holding",
@@ -143,6 +151,7 @@ const allDevProjects: Project[] = [
   },
   {
     id: 8,
+    slug: "club-des-actionnaires-lvmh",
     title: "Club des Actionnaires LVMH",
     type: DeviceType.LAPTOP,
     description: "Refonte du site du club des actionnaires",
@@ -156,6 +165,7 @@ const allDevProjects: Project[] = [
   },
   {
     id: 9,
+    slug: "jardin-d-acclimatation-lvmh",
     title: "Jardin d'Acclimatation LVMH",
     type: DeviceType.LAPTOP,
     description: "Refonte du site vitrine de la holding",
@@ -177,6 +187,7 @@ const allDevProjects: Project[] = [
   },
   {
     id: 10,
+    slug: "satisfy-running",
     title: "Satisfy Running",
     type: DeviceType.LAPTOP,
     description: "Refonte du site vitrine de la holding",
@@ -190,6 +201,7 @@ const allDevProjects: Project[] = [
   },
   {
     id: 11,
+    slug: "gemy-automobiles",
     title: "Gemy Automobiles",
     type: DeviceType.LAPTOP,
     description: "Refonte du site du conssessionnaire automobile",
@@ -203,6 +215,7 @@ const allDevProjects: Project[] = [
   },
   {
     id: 12,
+    slug: "apple-plan",
     title: "Apple Plan",
     type: DeviceType.MOBILE,
     description:
@@ -225,6 +238,7 @@ export const devProjects = allDevProjects.filter((p) => p.published);
 const allArtProjects: ArtProject[] = [
   {
     id: 13,
+    slug: "plan-eau",
     title: "Plan d'eau",
     description: "Plan d'eau à l'acrylique",
     category: "art",
@@ -237,6 +251,7 @@ const allArtProjects: ArtProject[] = [
   },
   {
     id: 14,
+    slug: "visage-sur-verre",
     title: "Visage sur verre",
     description: "Peinture acrylique sur verre",
     category: "art",
@@ -248,6 +263,7 @@ const allArtProjects: ArtProject[] = [
   },
   {
     id: 15,
+    slug: "personnage-sur-terre-cuite",
     title: "Personnage sur terre cuite",
     description: "Peinture acrylique sur terre cuite",
     category: "art",
@@ -259,6 +275,7 @@ const allArtProjects: ArtProject[] = [
   },
   {
     id: 16,
+    slug: "people-views",
     title: "People views",
     description: "Vue d'une foule",
     category: "art",
@@ -270,6 +287,7 @@ const allArtProjects: ArtProject[] = [
   },
   {
     id: 17,
+    slug: "grenouille",
     title: "Grenouille",
     description: "Grenouille à l'acrylique",
     category: "art",

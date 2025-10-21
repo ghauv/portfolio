@@ -1,6 +1,6 @@
 "use client";
 
-import { expertiseConfig } from "@/mocks/hero.mock";
+import { expertiseConfig } from "@/data/hero.mock";
 import { CATEGORIES_CONFIG } from "@/types/types";
 import { Focus, SubCategory } from "@/types/types";
 

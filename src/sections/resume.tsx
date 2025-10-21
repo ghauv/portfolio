@@ -4,7 +4,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/accordion";
-import { dropdownSkills, skills, education, roles } from "@/mocks/resume.mock";
+import { dropdownSkills, skills, education, roles } from "@/data/resume.mock";
 
 export function Resume() {
   return (

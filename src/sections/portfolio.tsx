@@ -7,7 +7,7 @@ import {
   uxProjects,
   devProjects,
   artProjects,
-} from "@/mocks/portfolio.mock";
+} from "@/data/portfolio.mock";
 import { Focus, SubCategory } from "@/types/types";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";

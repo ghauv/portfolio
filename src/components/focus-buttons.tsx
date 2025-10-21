@@ -1,7 +1,7 @@
 "use client";
 
 import { Focus } from "@/types/types";
-import { expertiseConfig } from "@/mocks/hero.mock";
+import { expertiseConfig } from "@/data/hero.mock";
 
 interface FocusButtonsProps {
   currentFocus: Focus;
